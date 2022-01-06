@@ -3,7 +3,7 @@
 * Récupérer la liste des films en tendance : DONE
 * Charger plus de résultats : DONE
 * Récupérer la liste des films avec une recherche : DONE
-* Annuler une recherche : TO DO
+* Annuler une recherche : DONE
 * Naviguer vers la page de détails (depuis la recherche) : DONE
 * Afficher les informations de base : DONE
 * Afficher la liste des acteurs : DONE
@@ -16,4 +16,4 @@
 
 ## Remarques éventuelles
 
-Exercice réalisé sur mon téléphone personnel.
+Exercice fait sur mon téléphone perso.

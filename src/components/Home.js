@@ -134,7 +134,7 @@ const Home = ({ navigation, favMovies }) => {
         </Button>
       </Layout>
 
-      <Button onPress={resetAndRequestPopularMovies}>Films populaires</Button>
+      <Button onPress={resetAndRequestPopularMovies}>Films en tendance</Button>
       {isLoading ? (
         <Spinner />
       ) : (
