@@ -15,8 +15,8 @@ const { Navigator, Screen } = createBottomTabNavigator();
 const SearchNavigation = createStackNavigator();
 const FavNavigation = createStackNavigator();
 
-const StarIcon = (props) => (
-  <Icon {...props} name="star" pack="feather" width={24} height={24} />
+const EyeIcon = (props) => (
+  <Icon {...props} name="eye" pack="feather" width={24} height={24} />
 );
 
 const SearchIcon = (props) => (
@@ -63,7 +63,7 @@ const BottomTabBar = ({ navigation, state }) => (
     onSelect={(index) => navigation.navigate(state.routeNames[index])}
   >
     <BottomNavigationTab title="Search" icon={SearchIcon} />
-    <BottomNavigationTab title="Watched" icon={StarIcon}>
+    <BottomNavigationTab title="Watched" icon={EyeIcon}>
       
     </BottomNavigationTab>
   </BottomNavigation>

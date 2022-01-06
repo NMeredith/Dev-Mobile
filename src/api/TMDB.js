@@ -31,20 +31,14 @@ export const getMovieByID = async (...arr) => {
   arr.forEach((arg) => {
     if ("movie_id" in arg) params.movie_id = arg.movie_id;
   });
-  // dud=dud est juste là pour pouvoir concatener url_end.
-  // cela n'aurait pas été nécessaire si on pouvait faire l'appel
-  // avec ?movie_id=id...
-  return await getTMDBResults(`/movie/${params.movie_id}?dud=dud`);
+  return await getTMDBResults(`/movie/${params.movie_id}?temp=temp`);
 };
 
 export const getMovieCreditsByID = async (...arr) => {
   arr.forEach((arg) => {
     if ("movie_id" in arg) params.movie_id = arg.movie_id;
   });
-  // dud=dud est juste là pour pouvoir concatener url_end.
-  // cela n'aurait pas été nécessaire si on pouvait faire l'appel
-  // avec ?movie_id=id...
-  return await getTMDBResults(`/movie/${params.movie_id}/credits?dud=dud`);
+ return await getTMDBResults(`/movie/${params.movie_id}/credits?temp=temp`);
 };
 
 export const getMoviesBySearch = async (...arr) => {

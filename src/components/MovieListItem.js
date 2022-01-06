@@ -22,7 +22,7 @@ const MovieListItem = ({ movieDetails, onClick, isFav = false }) => {
         }}
       />
       <Text category="h2">{moreDetails.title}</Text>
-     
+      <Text category="h4">{moreDetails.vote_average}</Text>
     </View>
   );
 
@@ -30,7 +30,7 @@ const MovieListItem = ({ movieDetails, onClick, isFav = false }) => {
     <View>
       <View {...props} style={[props.style, styles.footerContainer]}></View>
       <View>
-        <Text category="h6">Sortie le : {moreDetails.release_date}</Text>
+        <Text category="h6"> {moreDetails.release_date}</Text>
       </View>
     </View>
   );
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 0,
     justifyContent: "center",
-    
   },
   container: {
     flexDirection: "row",

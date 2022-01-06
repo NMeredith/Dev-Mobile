@@ -39,9 +39,8 @@ const MovieDetails = ({ favMovies, dispatch, route }) => {
   const renderCredits = ({ item }) => {
     return (
       <Layout>
-        <Text>Nom : {item.name}</Text>
-        <Text>Personnage joué : {item.character}</Text>
-      </Layout>
+        <Text> {item.name} as {item.character} </Text>
+     </Layout>
     );
   };
 
@@ -51,24 +50,14 @@ const MovieDetails = ({ favMovies, dispatch, route }) => {
         <Layout style={{ margin: 5, flex: 1 }}>
           <Layout>
             <TopNavigation
-              category="h6"
               title={route.params.movieDetails.title}
               alignment="center"
             />
-            <Text category="h6" alignment="center">
-              {route.params.movieDetails.release_date}
-            </Text>
+            
           </Layout>
           <Layout>
             <Layout>
-              <Layout style={{ margin: 5 }}>
-                <Image
-                  style={styles.tinyLogo}
-                  source={{
-                    uri: `https://image.tmdb.org/t/p/w500/${route.params.movieDetails.poster_path}`,
-                  }}
-                />
-              </Layout>
+              
               <Layout style={{ margin: 5 }}>
                 {displaySaveObject(
                   route.params.movieDetails.id,
@@ -78,38 +67,34 @@ const MovieDetails = ({ favMovies, dispatch, route }) => {
               </Layout>
               <Layout style={{ margin: 5 }}>
                 <Layout>
-                  <Text category="h6">
+                  <Text category="h4">
                     Release : {route.params.movieDetails.release_date}
                   </Text>
                 </Layout>
+
                 <Layout>
-                  <Text category="h2">Durée :</Text>
-                  <Text category="h6">
-                    {route.params.movieDetails.runtime} minutes
+                  <Text category="h4">
+                    Genre
+                    {route.params.movieDetails.genres.length >= 1 ? "s" : ""} :
+                  </Text>
+                  <Layout>
+                    <View>
+                      <List
+                        data={route.params.movieDetails.genres}
+                        renderItem={renderItem}
+                      />
+                    </View>
+                  </Layout>
+                </Layout>
+
+                <Layout>
+                  <Text category="h4">
+                    Runtime :{route.params.movieDetails.runtime} min
                   </Text>
                 </Layout>
+                
                 <Layout>
-                  <Text category="h2">Résumé :</Text>
-                  <Text>{route.params.movieDetails.overview}</Text>
-                </Layout>
-              </Layout>
-            </Layout>
-          </Layout>
-          <Layout>
-            <Text category="h2">
-              Genre{route.params.movieDetails.genres.length >= 1 ? "s" : ""} :
-            </Text>
-            <Layout>
-              <View>
-                <List
-                  data={route.params.movieDetails.genres}
-                  renderItem={renderItem}
-                />
-              </View>
-            </Layout>
-          </Layout>
-          <Layout>
-            <Text category="h2">Crédits :</Text>
+            <Text category="h4">Cast :</Text>
             <Layout>
               <View>
                 <List
@@ -120,6 +105,21 @@ const MovieDetails = ({ favMovies, dispatch, route }) => {
               </View>
             </Layout>
           </Layout>
+
+              </Layout>
+            </Layout>
+          </Layout>
+
+          <Layout>
+                  <Text category="h4">Overview:</Text>
+                  <Text>{route.params.movieDetails.overview}</Text>
+                </Layout>
+
+
+
+
+
+          
         </Layout>
       </ScrollView>
     </SafeAreaView>
